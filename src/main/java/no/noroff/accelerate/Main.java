@@ -8,7 +8,7 @@ import no.noroff.accelerate.Item.Weapon.Weapon;
 
 public class Main {
     public static void main(String[] args) {
-    Wizard wiz = new Wizard("Harry");
+    Wizard wiz = new Wizard("HarryP.");
 
     }
 }
