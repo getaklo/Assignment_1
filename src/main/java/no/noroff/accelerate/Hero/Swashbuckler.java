@@ -1,5 +1,7 @@
 package no.noroff.accelerate.Hero;
 
+import no.noroff.accelerate.Item.Slot;
+import no.noroff.accelerate.Item.Weapon.Weapon;
 import no.noroff.accelerate.Item.Weapon.WeaponType;
 
 public class Swashbuckler extends Hero{
@@ -15,6 +17,22 @@ public class Swashbuckler extends Hero{
         this.level++;
         LevelAttributes.increase(new HeroAttribute(1,4,1));
 
+    }
+
+    @Override
+    public double damage() {
+        double damage = 1;
+        Weapon weapon = (Weapon) equipment.get(Slot.WEAPON);
+
+        HeroAttribute attribute = this.getTotalAttributes();
+        int damagingAttribute = attribute.getDexterity();
+
+        if (weapon != null) {
+            damage = weapon.getDamage();
+        }
+
+        damage *= (1 + ((double) damagingAttribute / 100));
+        return damage;
     }
     //TODO
 }

@@ -16,13 +16,13 @@ public abstract class Item {
         this.name = name;
         this.requiredLevel= requiredLevel;
     }
-
-    public int getRequiredLevel() {
-        return requiredLevel;
-    }
     public Item() {
 
     }
+    public int getRequiredLevel() {
+        return requiredLevel;
+    }
+
 
     //todo
 }

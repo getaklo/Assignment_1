@@ -1,5 +1,7 @@
 package no.noroff.accelerate.Hero;
 
+import java.util.Objects;
+
 public class HeroAttribute {
     private int strength;
     private int dexterity;
@@ -23,6 +25,32 @@ public class HeroAttribute {
         int newInt = this.intelligence += att.intelligence;
 
         return new HeroAttribute(newStrength, newDex, newInt);
+    }
+
+    // Getters used to calcualte damage.
+    public int getStrength() {
+        return strength;
+    }
+
+    public int getDexterity() {
+        return dexterity;
+    }
+
+    public int getIntelligence() {
+        return intelligence;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        HeroAttribute that = (HeroAttribute) o;
+        return strength == that.strength && dexterity == that.dexterity && intelligence == that.intelligence;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(strength, dexterity, intelligence);
     }
 
     @Override

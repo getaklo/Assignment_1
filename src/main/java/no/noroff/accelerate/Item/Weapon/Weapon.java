@@ -17,4 +17,8 @@ public class Weapon extends Item {
     public WeaponType getWeaponType() {
         return type;
     }
+
+    public int getDamage() {
+        return damage;
+    }
 }
