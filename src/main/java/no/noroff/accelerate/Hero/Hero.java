@@ -38,6 +38,10 @@ public abstract class Hero {
         return level;
     }
 
+    public String getName() {
+        return name;
+    }
+
     /**
      * Method for leveling up a hero
      */
@@ -69,14 +73,19 @@ public abstract class Hero {
         else throw new InvalidArmorException("Invalid armor!");
     }
 
+    /**
+     * Method to display the stats of a character.
+     * @return String with characters stats.
+     */
     public String display() {
         //TODO
         StringBuilder builder = new StringBuilder();
-        builder.append("Name: "+this.name + " ");
-        builder.append("Class: "+this.getClass()+ " ");
-        builder.append("Strength: "+this.getTotalAttributes().getStrength()+ " ");
-        builder.append(("Dexterity: "+this.getTotalAttributes().getDexterity())+ " ");
-        builder.append("Intelligence: "+this.getTotalAttributes().getIntelligence()+ " ");
+        builder.append("Name: "+this.name + ", ");
+        builder.append("Class: "+this.getClass().getSimpleName()+ ", ");
+        builder.append("Level: " + this.getLevel()+", ");
+        builder.append("Strength: "+this.getTotalAttributes().getStrength()+ ", ");
+        builder.append("Dexterity: "+this.getTotalAttributes().getDexterity()+ ", ");
+        builder.append("Intelligence: "+this.getTotalAttributes().getIntelligence()+ ", ");
         builder.append("Damage: "+this.damage());
 
         return builder.toString();
@@ -87,12 +96,25 @@ public abstract class Hero {
         return LevelAttributes;
     }
 
+    /**
+     * Method to calculate damage.
+     * @return Damage as a double
+     */
     public abstract double damage();
 
 
+    /**
+     * Method to calculate a heros total stats, including stats from armor.
+     * @return HeroAttribute object with total stats.
+     */
     public HeroAttribute getTotalAttributes() {
-        HeroAttribute total = this.LevelAttributes;
 
+        //Make empty attribute object
+        HeroAttribute total = new HeroAttribute(0,0,0);
+        // Increase by level attributes
+        total.increase(this.getLevelAttributes());
+
+        // Increase total for each piece of armor
         for (Map.Entry<Slot, Item> set : equipment.entrySet()) {
             if (set.getKey() != Slot.WEAPON && set.getValue() != null) {
                 Armor armor = (Armor) set.getValue();

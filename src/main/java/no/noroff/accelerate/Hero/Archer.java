@@ -38,5 +38,5 @@ public class Archer extends Hero{
         damage *= (1 + ((double) damagingAttribute / 100));
         return damage;
     }
-    //TODO
+
 }

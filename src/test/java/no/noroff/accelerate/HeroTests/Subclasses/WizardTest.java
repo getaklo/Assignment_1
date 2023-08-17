@@ -16,6 +16,18 @@ import static org.junit.jupiter.api.Assertions.*;
 class WizardTest {
 
     @Test
+    void testDisplay_validInputs_shouldDisplayHeroNameClassLevelStrDexIntDamage(){
+        Wizard wizard = new Wizard("Wizzy");
+
+        String expected = "Name: Wizzy, Class: Wizard, Level: 1, Strength: 1, Dexterity: 1, Intelligence: 8, Damage: 1.08";
+
+        String actual = wizard.display();
+
+        assertEquals(expected, actual);
+
+    }
+
+    @Test
     void equipWeapon_wrongWeaponTypeforWizard_shouldThrowInvalidWeaponException() {
         Wizard w = new Wizard("Wizzy");
         Weapon weapon = new Weapon("Name", 1, 1, WeaponType.BOW);
@@ -73,7 +85,7 @@ class WizardTest {
 
         wiz.equipWeapon(weapon);
 
-        double expected = 10.8;
+        double expected = 10 *(1 + ((double) 8 / 100));;
 
         double actual = wiz.damage();
 
@@ -84,7 +96,7 @@ class WizardTest {
     void calculateDamageWizard_withoutWeapon_shouldReturnDamageAtLevelOneWithoutWeapon() throws InvalidWeaponException {
         Wizard wiz = new Wizard("HarryP");
 
-        double expected = 1.08;
+        double expected = 1 *(1 + ((double) 8 / 100));;
 
         double actual = wiz.damage();
 
@@ -93,7 +105,7 @@ class WizardTest {
     }
 
     @Test
-    void levelUp_validInput_shouldIncreaseLevelAttributes() {
+    void levelUpWizard_validInput_shouldIncreaseLevelAttributes() {
         // Arrange
         Wizard wiz = new Wizard("HarryP");
 
@@ -107,7 +119,7 @@ class WizardTest {
     }
 
     @Test
-    void levelUp_validInput_shouldLevelUpCharacter(){
+    void levelUpWizard_validInput_shouldLevelUpCharacter(){
         Wizard wiz = new Wizard("HarryP");
 
         wiz.levelUp();

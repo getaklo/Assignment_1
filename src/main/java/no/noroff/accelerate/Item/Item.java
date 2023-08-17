@@ -23,6 +23,11 @@ public abstract class Item {
         return requiredLevel;
     }
 
+    public String getName() {
+        return name;
+    }
 
-    //todo
+    public Slot getSlot() {
+        return slot;
+    }
 }

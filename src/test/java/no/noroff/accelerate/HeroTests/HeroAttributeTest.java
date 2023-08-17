@@ -29,12 +29,14 @@ class HeroAttributeTest {
 
     @Test
     void testTotalAttributes_noEquipment_shouldReturnTotalOfLevelAttributes(){
-        Wizard wizard = new Wizard("HarryP");
 
+        // Arrange
+        Wizard wizard = new Wizard("HarryP");
         HeroAttribute expected = new HeroAttribute(1,1,8);
 
+        // Act
         HeroAttribute actual = wizard.getTotalAttributes();
-
+        // Assert
         assertEquals(expected, actual);
 
 

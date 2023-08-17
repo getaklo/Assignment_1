@@ -1,5 +1,6 @@
 package no.noroff.accelerate.Hero;
 
+import no.noroff.accelerate.Item.Armor.ArmorType;
 import no.noroff.accelerate.Item.Slot;
 import no.noroff.accelerate.Item.Weapon.Weapon;
 import no.noroff.accelerate.Item.Weapon.WeaponType;
@@ -10,6 +11,8 @@ public class Swashbuckler extends Hero{
         LevelAttributes = new HeroAttribute(2,6,1);
         validWeaponTypes.add(WeaponType.DAGGER);
         validWeaponTypes.add(WeaponType.SWORD);
+        validArmorTypes.add(ArmorType.MAIL);
+        validArmorTypes.add(ArmorType.LEATHER);
     }
 
     @Override
