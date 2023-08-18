@@ -16,13 +16,8 @@ Console application that simulates an Action RPG, including different types of h
 
 ## Install
 
-```
-```
+Fork it i guess?
 
-## Usage
-
-```
-```
 
 ## Maintainers
 
