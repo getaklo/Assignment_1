@@ -75,18 +75,19 @@ public abstract class Hero {
 
     /**
      * Method to display the stats of a character.
+     *
      * @return String with characters stats.
      */
     public String display() {
         //TODO
         StringBuilder builder = new StringBuilder();
-        builder.append("Name: "+this.name + ", ");
-        builder.append("Class: "+this.getClass().getSimpleName()+ ", ");
-        builder.append("Level: " + this.getLevel()+", ");
-        builder.append("Strength: "+this.getTotalAttributes().getStrength()+ ", ");
-        builder.append("Dexterity: "+this.getTotalAttributes().getDexterity()+ ", ");
-        builder.append("Intelligence: "+this.getTotalAttributes().getIntelligence()+ ", ");
-        builder.append("Damage: "+this.damage());
+        builder.append("Name: " + this.name + ", ");
+        builder.append("Class: " + this.getClass().getSimpleName() + ", ");
+        builder.append("Level: " + this.getLevel() + ", ");
+        builder.append("Strength: " + this.getTotalAttributes().getStrength() + ", ");
+        builder.append("Dexterity: " + this.getTotalAttributes().getDexterity() + ", ");
+        builder.append("Intelligence: " + this.getTotalAttributes().getIntelligence() + ", ");
+        builder.append("Damage: " + this.damage());
 
         return builder.toString();
 
@@ -98,6 +99,7 @@ public abstract class Hero {
 
     /**
      * Method to calculate damage.
+     *
      * @return Damage as a double
      */
     public abstract double damage();
@@ -105,12 +107,13 @@ public abstract class Hero {
 
     /**
      * Method to calculate a heros total stats, including stats from armor.
+     *
      * @return HeroAttribute object with total stats.
      */
     public HeroAttribute getTotalAttributes() {
 
         //Make empty attribute object
-        HeroAttribute total = new HeroAttribute(0,0,0);
+        HeroAttribute total = new HeroAttribute(0, 0, 0);
         // Increase by level attributes
         total.increase(this.getLevelAttributes());
 
@@ -124,7 +127,6 @@ public abstract class Hero {
 
         return total;
     }
-
 
 
 }

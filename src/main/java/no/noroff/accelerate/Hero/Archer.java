@@ -5,11 +5,11 @@ import no.noroff.accelerate.Item.Slot;
 import no.noroff.accelerate.Item.Weapon.Weapon;
 import no.noroff.accelerate.Item.Weapon.WeaponType;
 
-public class Archer extends Hero{
+public class Archer extends Hero {
 
     public Archer(String name) {
         super(name);
-        LevelAttributes=new HeroAttribute(1,7,1);
+        LevelAttributes = new HeroAttribute(1, 7, 1);
         validArmorTypes.add(ArmorType.LEATHER);
         validWeaponTypes.add(WeaponType.BOW);
 
@@ -19,7 +19,7 @@ public class Archer extends Hero{
     @Override
     public void levelUp() {
         this.level++;
-        LevelAttributes.increase(new HeroAttribute(1,5,1));
+        LevelAttributes.increase(new HeroAttribute(1, 5, 1));
 
     }
 

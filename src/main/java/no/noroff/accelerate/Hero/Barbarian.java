@@ -5,10 +5,10 @@ import no.noroff.accelerate.Item.Slot;
 import no.noroff.accelerate.Item.Weapon.Weapon;
 import no.noroff.accelerate.Item.Weapon.WeaponType;
 
-public class Barbarian extends Hero{
+public class Barbarian extends Hero {
     public Barbarian(String name) {
         super(name);
-        LevelAttributes = new HeroAttribute(5,2,1);
+        LevelAttributes = new HeroAttribute(5, 2, 1);
         validArmorTypes.add(ArmorType.PLATE);
         validArmorTypes.add(ArmorType.MAIL);
         validWeaponTypes.add(WeaponType.MACE);
@@ -19,8 +19,8 @@ public class Barbarian extends Hero{
 
     @Override
     public void levelUp() {
-    this.level++;
-    LevelAttributes.increase(new HeroAttribute(3,2,1));
+        this.level++;
+        LevelAttributes.increase(new HeroAttribute(3, 2, 1));
     }
 
     @Override

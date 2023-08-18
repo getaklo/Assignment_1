@@ -14,11 +14,13 @@ public abstract class Item {
 
     public Item(String name, int requiredLevel) {
         this.name = name;
-        this.requiredLevel= requiredLevel;
+        this.requiredLevel = requiredLevel;
     }
+
     public Item() {
 
     }
+
     public int getRequiredLevel() {
         return requiredLevel;
     }

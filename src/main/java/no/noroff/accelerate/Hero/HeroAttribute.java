@@ -13,19 +13,16 @@ public class HeroAttribute {
         this.intelligence = intelligence;
     }
 
-    public void increase(HeroAttribute att){
-      this.strength += att.strength;
-      this.dexterity += att.dexterity;
-      this.intelligence += att.intelligence;
+    /**
+     * Method to increase HeroAttributes by the values of another HeroAttributes-object.
+     * @param attribute
+     */
+    public void increase(HeroAttribute attribute) {
+        this.strength += attribute.strength;
+        this.dexterity += attribute.dexterity;
+        this.intelligence += attribute.intelligence;
     }
 
-    public HeroAttribute inc(HeroAttribute att){
-        int newStrength = this.strength += att.strength;
-        int newDex = this.dexterity += att.dexterity;
-        int newInt = this.intelligence += att.intelligence;
-
-        return new HeroAttribute(newStrength, newDex, newInt);
-    }
 
     // Getters used to calcualte damage.
     public int getStrength() {
